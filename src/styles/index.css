@@ -1,11 +1,65 @@
-/* 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.card {
+  background-image: url("https://media.istockphoto.com/id/1263403120/es/vector/antiguo-pergamino-de-papel-antiguo-desplazarse-sobre-blanco.jpg?s=612x612&w=0&k=20&c=fAIHQ5YPrOwWbRR7fxzFUQNeW_WYwxtpLgo7RSLgclQ=");
+  background-size: cover;
+  background-position: center;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: 'Cinzel', serif;
+  color: #2b1b00;
+  padding: 2rem 1rem;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 500px;
+  position: relative;
+}
 
-*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-img-top {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 1em auto 1rem auto;
+  display: block;
+  border: 2px solid #4b2e00;
+}
+
+/* .nombre-mago {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px #fff2d6;
+  margin-bottom: 1rem;
+} */
+.nombre-mago,
+.casa-mago,
+.año-mago,
+.hechizo-mago {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.registro-mago {
+  background-color: #4b2e00;
+  border: none;
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.registro-mago :hover {
+  background-color: #2b1b00;
+  box-shadow: 0 0 5px #000;
+}
