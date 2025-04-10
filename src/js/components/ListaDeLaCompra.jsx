@@ -14,10 +14,6 @@ export const ListaDeLaCompra = () => {
                         type="text"
                         placeholder="Producto"
                     />
-                    <input
-                        type="number"
-                        placeholder="Cantidad"
-                    />
                     <button type="submit">Agregar</button>
                 </form>
 
