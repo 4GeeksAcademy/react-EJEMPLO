@@ -46,13 +46,7 @@ export const ListaDeLaCompra = () => {
                         value={producto}
                         onChange={añadirProducto}
                     />
-<<<<<<< HEAD
-                    {/* <input
-                        type="number"
-                        placeholder="Cantidad"
-                    /> */}
-=======
->>>>>>> beab912badbd0c869ab9cb870d860293ba55217f
+
                     <button type="submit">Agregar</button>
                 </form>
 
