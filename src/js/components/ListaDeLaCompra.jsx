@@ -50,6 +50,7 @@ export const ListaDeLaCompra = () => {
                     <button type="submit">Agregar</button>
                 </form>
 
+
                 <ul className="list-group">
                     { 
                         lista.map((elemento, indice)=> 

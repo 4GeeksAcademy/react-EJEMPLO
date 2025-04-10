@@ -1,5 +1,6 @@
 import React from "react";
-import { TarjetaDeMago } from "./TarjetaDeMago.jsx";
+import { FormularioMagico } from "./FormularioMagico.jsx";
+
 
 
 
@@ -7,7 +8,7 @@ import { TarjetaDeMago } from "./TarjetaDeMago.jsx";
 const Home = () => {
 	return (
 		<div className="text-center">
-            <TarjetaDeMago/>
+            <FormularioMagico/>
 
 		</div>
 	);
