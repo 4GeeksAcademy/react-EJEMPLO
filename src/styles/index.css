@@ -15,18 +15,24 @@
   text-align: center;
   min-height: 500px;
   position: relative;
-  
+
+}
+
+.text-center {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 .card-img-top {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   margin: 1em auto 1rem auto;
