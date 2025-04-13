@@ -1,47 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../styles/formulario-magico.css";
 
 export const FormularioMagico = () => {
-  const [datosGuardados, setDatosGuardados] = useState([]);
 
-  const [datos, setDatos] = useState({
-    nombre: "",
-    especialidad: "",
-    nivel: "",
-    familiar: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setDatos({
-      ...datos,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setDatosGuardados([...datosGuardados, { ...datos }]);
-    setDatos({
-      nombre: "",
-      especialidad: "",
-      nivel: "",
-      familiar: "",
-    });
-  };
 
   return (
     <div className="container p-4 fondo-magico">
       <h2 className="text-center titulo-formulario">📜 Registro de Estudiantes Mágicos</h2>
-      <form onSubmit={handleSubmit} className="p-4 rounded shadow bg-light form-magico">
+      <form className="p-4 rounded shadow bg-light form-magico">
         <div className="mb-3">
           <label>Nombre del aprendiz:</label>
           <input
             type="text"
             className="form-control"
             name="nombre"
-            value={datos.nombre}
-            onChange={handleChange}
             placeholder="Ej. Hermione Granger"
           />
         </div>
@@ -51,8 +23,6 @@ export const FormularioMagico = () => {
           <select
             className="form-select"
             name="especialidad"
-            value={datos.especialidad}
-            onChange={handleChange}
           >
             <option value="">Selecciona una opción</option>
             <option value="Pociones">Pociones</option>
@@ -66,8 +36,6 @@ export const FormularioMagico = () => {
           <select
             className="form-select"
             name="nivel"
-            value={datos.nivel}
-            onChange={handleChange}
           >
             <option value="">Selecciona tu nivel</option>
             <option value="Principiante">Principiante</option>
@@ -77,13 +45,11 @@ export const FormularioMagico = () => {
         </div>
 
         <div className="mb-3">
-          <label>Familiar mágico:</label>
+          <label>Mascota mágica:</label>
           <input
             type="text"
             className="form-control"
-            name="familiar"
-            value={datos.familiar}
-            onChange={handleChange}
+            name="mascota"
             placeholder="Ej. Búho, Gato, Sapo..."
           />
         </div>
@@ -96,14 +62,17 @@ export const FormularioMagico = () => {
       <div className="mt-4">
         <h4>📖 Lista de aprendices registrados:</h4>
         <ul className="list-group mt-3">
-          {datosGuardados.map((el, i) => (
-            <li key={i} className="tarjeta-aprendiz">
-              <span>🧙‍♂️ <strong>Nombre:</strong> {el.nombre}</span>
-              <span>✨ <strong>Especialidad:</strong> {el.especialidad}</span>
-              <span>📚 <strong>Nivel:</strong> {el.nivel}</span>
-              <span>🐾 <strong>Familiar:</strong> {el.familiar}</span>
+            <li className="tarjeta-aprendiz">
+              <span>🧙‍♂️ <strong>Nombre:</strong></span>
+              <span>✨ <strong>Especialidad:</strong></span>
+              <span>📚 <strong>Nivel:</strong></span>
+              <span>🐾 <strong>Familiar:</strong></span>
+              <button
+                className="btn btn-outline-danger btn-sm mt-2"
+              >
+                Eliminar
+              </button>
             </li>
-          ))}
         </ul>
 
       </div>

@@ -5,7 +5,6 @@ export const TarjetaDeMago = () => {
 
     const [magos, setMagos] = useState([])
 
-
     const getMagos = () => {
         fetch("https://hp-api.onrender.com/api/characters/")
             .then(response => response.json())
