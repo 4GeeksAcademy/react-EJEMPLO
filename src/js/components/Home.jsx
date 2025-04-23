@@ -1,5 +1,7 @@
 import React from "react";
-import { FormularioMagico } from "./FormularioMagico.jsx";
+
+
+
 
 
 
@@ -8,7 +10,6 @@ import { FormularioMagico } from "./FormularioMagico.jsx";
 const Home = () => {
 	return (
 		<div className="text-center">
-            <FormularioMagico/>
 
 		</div>
 	);
