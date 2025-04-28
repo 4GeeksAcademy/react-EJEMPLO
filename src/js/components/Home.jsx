@@ -1,4 +1,5 @@
 import React from "react";
+import { ListaDeLaCompra } from "./ListaDeLaCompra";
 
 
 
@@ -10,6 +11,7 @@ import React from "react";
 const Home = () => {
 	return (
 		<div className="text-center">
+            <ListaDeLaCompra/>
 
 		</div>
 	);
