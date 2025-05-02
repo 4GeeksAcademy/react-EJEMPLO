@@ -1,81 +1,68 @@
-import React from "react";
-import "../../styles/formulario-magico.css";
+import { useState } from "react";
 
-export const FormularioMagico = () => {
+function FormularioMagico({ registrarAlumno }) {
+  const [nombre, setNombre] = useState("");
+  const [casa, setCasa] = useState("");
+  const [anio, setAnio] = useState("");
+  const [hechizo, setHechizo] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (nombre && casa && anio && hechizo) {
+      registrarAlumno({ nombre, casa, anio, hechizo });
+      setNombre("");
+      setCasa("");
+      setAnio("");
+      setHechizo("");
+    } else {
+      alert("Por favor, completa todos los campos.");
+    }
+  };
 
   return (
-    <div className="container p-4 fondo-magico">
-      <h2 className="text-center titulo-formulario">📜 Registro de Estudiantes Mágicos</h2>
-      <form className="p-4 rounded shadow bg-light form-magico">
-        <div className="mb-3">
-          <label>Nombre del aprendiz:</label>
-          <input
-            type="text"
-            className="form-control"
-            name="nombre"
-            placeholder="Ej. Hermione Granger"
-          />
-        </div>
+    <form onSubmit={handleSubmit} className="p-4 border rounded-lg shadow-md bg-white">
+      <h2 className="text-lg font-bold mb-2">Registrar Aprendiz</h2>
 
-        <div className="mb-3">
-          <label>Especialidad mágica:</label>
-          <select
-            className="form-select"
-            name="especialidad"
-          >
-            <option value="">Selecciona una opción</option>
-            <option value="Pociones">Pociones</option>
-            <option value="Hechizos">Hechizos</option>
-            <option value="Criaturas mágicas">Criaturas mágicas</option>
-          </select>
-        </div>
+      <input
+        type="text"
+        placeholder="Nombre del aprendiz"
+        value={nombre}
+        onChange={(e) => setNombre(e.target.value)}
+        className="block w-full mb-2 p-2 border rounded"
+      />
 
-        <div className="mb-3">
-          <label>Nivel:</label>
-          <select
-            className="form-select"
-            name="nivel"
-          >
-            <option value="">Selecciona tu nivel</option>
-            <option value="Principiante">Principiante</option>
-            <option value="Intermedio">Intermedio</option>
-            <option value="Avanzado">Avanzado</option>
-          </select>
-        </div>
+      <input
+        type="text"
+        placeholder="Casa (Ej: Gryffindor)"
+        value={casa}
+        onChange={(e) => setCasa(e.target.value)}
+        className="block w-full mb-2 p-2 border rounded"
+      />
 
-        <div className="mb-3">
-          <label>Mascota mágica:</label>
-          <input
-            type="text"
-            className="form-control"
-            name="mascota"
-            placeholder="Ej. Búho, Gato, Sapo..."
-          />
-        </div>
+      <input
+        type="number"
+        placeholder="Año"
+        value={anio}
+        onChange={(e) => setAnio(e.target.value)}
+        className="block w-full mb-2 p-2 border rounded"
+      />
 
-        <button type="submit" className="btn btn-dark w-100">
-          Registrar aprendiz
-        </button>
-      </form>
+      <input
+        type="text"
+        placeholder="Hechizo favorito"
+        value={hechizo}
+        onChange={(e) => setHechizo(e.target.value)}
+        className="block w-full mb-4 p-2 border rounded"
+      />
 
-      <div className="mt-4">
-        <h4>📖 Lista de aprendices registrados:</h4>
-        <ul className="list-group mt-3">
-            <li className="tarjeta-aprendiz">
-              <span>🧙‍♂️ <strong>Nombre:</strong></span>
-              <span>✨ <strong>Especialidad:</strong></span>
-              <span>📚 <strong>Nivel:</strong></span>
-              <span>🐾 <strong>Familiar:</strong></span>
-              <button
-                className="btn btn-outline-danger btn-sm mt-2"
-              >
-                Eliminar
-              </button>
-            </li>
-        </ul>
-
-      </div>
-    </div>
+      <button
+        type="submit"
+        className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700"
+      >
+        Registrar
+      </button>
+    </form>
   );
-};
+}
+
+export default FormularioMagico;
