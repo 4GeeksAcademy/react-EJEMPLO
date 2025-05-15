@@ -1,8 +1,4 @@
 import React from "react";
-import { ListaDeLaCompra } from "./ListaDeLaCompra";
-
-
-
 
 
 
@@ -11,8 +7,7 @@ import { ListaDeLaCompra } from "./ListaDeLaCompra";
 const Home = () => {
 	return (
 		<div className="text-center">
-            <ListaDeLaCompra/>
-
+           <h2>Aquí irá nuestro componente</h2>
 		</div>
 	);
 };
