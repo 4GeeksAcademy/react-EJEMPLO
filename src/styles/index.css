@@ -70,3 +70,14 @@
   background-color: #2b1b00;
   box-shadow: 0 0 5px #000;
 }
+
+.container {
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin-top: 4em;
+    border: 5px dashed darkgrey;
+    width: 50%;
+    height: 50%;
+}
